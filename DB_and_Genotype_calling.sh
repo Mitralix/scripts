@@ -28,4 +28,12 @@ gatk GenomicsDBImport -V gvcf.list \
 gatk GenotypeGVCFs -R ../Orosv1mt.fasta \
 -V gendb://${FILENAME}_DB -O ${FILENAME}.vcf.gz
 
+## Acess to PCA program SMART PCA
+export
+PATH="/projects/ec34/biosin5410/sbatch_intro/SNP_calling/script/:$PATH"
+
+##Run PCA program SMART PCA
+Run_PCA ${FILENAME}.vcf.gz
+
+
 echo "Finished running jobs"
